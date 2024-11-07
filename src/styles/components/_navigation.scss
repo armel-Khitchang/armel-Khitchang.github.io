@@ -164,8 +164,10 @@
 @media screen and (max-width: 580px) {
 
     .sidebar{
-        ul{
-            justify-content: space-around !important;
+        .navigation ul {
+            display: flex;  
+            flex-direction: row;  // Aligne les icônes horizontalement
+            justify-content: space-around;
 
             li{
                 padding: 1rem 0 !important;

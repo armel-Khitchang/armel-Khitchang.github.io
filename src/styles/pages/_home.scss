@@ -1,24 +1,22 @@
 .home {
-
     .homeContent {
         background: linear-gradient(115deg, $couleur-1 50%, transparent 100%);
-        min-height: $minHeight;
-        width: 1000px;
+        width: 100%; // Utilisation de la largeur totale de l'écran
+        max-width: 1000px;
         min-height: 500px;
         border-radius: $borderRadius;
         position: relative;
-        overflow: hidden;   
+        overflow: hidden;
 
         &:after {
             content: '';
             position: absolute;
             height: 100%;
-            width: inherit;
+            width: 100%;
             background: url('../../media/Armel_home2.jpg') no-repeat center/cover;
             z-index: -1;
             filter: brightness(70%);
         }
-
 
         .content {
             position: absolute;
@@ -26,58 +24,91 @@
             left: 13%;
             font-family: $font-1;
 
-        h1 {
-            font-size: 5rem;
-            font-family: $font-3;
-            color: $couleur-5;
-            text-transform: uppercase;
-            text-shadow: 3px 6px 2px $black;
-        }
+            h1 {
+                font-size: 5rem;
+                font-family: $font-3;
+                color: $couleur-5;
+                text-transform: uppercase;
+                text-shadow: 3px 6px 2px $black;
+            }
 
-        h2 {
-            font-size: 2.5rem;
-            padding: 1.7rem 0  7rem ;
-            color: $couleur-3; 
-            text-shadow: 1px 4px 1px $black;
-        }
+            h2 {
+                font-size: 2.5rem;
+                padding: 1.7rem 0 2rem; // Réduction de la marge pour éviter le scroll
+                color: $couleur-3;
+                text-shadow: 1px 4px 1px $black;
+            }
 
-
-        .pdf {
-            a {
+            .pdf a {
                 font-size: 1.5rem;
                 background: $couleur-3;
                 padding: 1rem 2rem;
                 border-radius: $borderRadius;
                 box-shadow: 0 5px 1px rgb(15, 15, 15);
                 transition: 0.2s ease;
-                &:hover{
+                
+                &:hover {
                     background-color: $couleur-4;
                 }
             }
-        }
-
         }
     }
 }
 
 @media screen and (max-width: 850px) {
-    .homeContent{
+    .homeContent {
         margin: 0 !important;
+        width: 100%;
+        min-height: 100vh; // Utilisation de la hauteur de l'écran pour éviter le scroll
+    }
+
+    .content {
+        top: 15%;
+        left: 10%;
+        
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            padding: 1rem 0; // Ajustement de l'espacement pour mobile
+        }
+
+        .pdf a {
+            font-size: 1.3rem;
+            padding: 0.8rem 1.5rem; // Réduction de la taille du bouton
+        }
     }
 }
 
-@media screen and (max-width: 580px) {
-    .homeContent{
-        &:after{
-            background: url('../../media/Armel_home.jpg') no-repeat 50%/cover !important;
+@media screen and (max-width: 480px) {
+    .homeContent {
+        min-height: 100vh; // Utilisation de toute la hauteur de l'écran
+        padding: 1rem; // Ajout de padding pour mieux centrer les éléments
+
+        &:after {
+            background: url('../../media/Armel_home.jpg') no-repeat 60% 50%/cover !important;
         }
 
-        h1{
-            font-size: 3rem !important; 
-        }
+        .content {
+            top: 12%;
+            left: 5%;
+            width: 90%; // Adaptation pour contenir tout le contenu sans débordement
 
-        h2{
-            font-size: 1.8rem !important; 
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                padding: 0.5rem 0; // Moins d'espacement pour s'adapter à l'écran
+            }
+
+            .pdf a {
+                font-size: 1rem;
+                padding: 0.6rem 1.2rem; // Taille de bouton réduite pour qu’il soit visible
+            }
         }
     }
 }

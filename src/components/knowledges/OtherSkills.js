@@ -17,7 +17,7 @@ const OtherSkills = () => {
                     <li>                
                     <i className='fas fa-check-square'>Methodes agiles / UML </i>
                     </li>
-                
+                    &nbsp; 
                 </ul>
 
                 <ul>
@@ -32,7 +32,7 @@ const OtherSkills = () => {
                     <li>                
                     <i className='fas fa-check-square'>Montage video</i>
                     </li>
-                
+                    &nbsp; 
                 </ul>
 
         </div>
